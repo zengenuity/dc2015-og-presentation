@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Secret Life of Organic Groups</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black-wayne.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown>
+                    <script type="text/template">
+						<img alt="DrupalCon Los Angeles 2015" src="/img/dc2015-banner.png" style="margin-top: -50px; width: 40%; height: auto; border: none; background: transparent; box-shadow: none;"/>
+						## The Secret Life of <!-- .element: style="margin-bottom: 0;font-family: 'LatoLatinBlack', 'LatoLatin', 'Source Sans Pro', Helvetica, sans-serif; font-size: 1.4em;" -->
+						# Organic Groups
+
+						May 13, 2015 <!-- .element: style="margin-top: 130px;" -->
+
+						[Wayne Eaker](http://wayneeaker.com) / [@wayneeaker](http://twitter.com/wayneeaker)<br />
+						[https://events.drupal.org/node/1109](https://events.drupal.org/node/1109)
+                    </script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img alt="DrupalCon Los Angeles 2015" src="/img/dc2015-banner.png" style="margin-top: -50px; width: 40%; height: auto; border: none; background: transparent; box-shadow: none;"/>
+						# Organic Groups <!-- .element: style="margin-bottom: 0;" -->
+						## from FML to OMG <!-- .element: style="margin-bottom: 0;font-family: 'LatoLatinBlack', 'LatoLatin', 'Source Sans Pro', Helvetica, sans-serif; font-size: 1.4em;" -->
+						(and back again)<!-- .element: style="font-family: 'LatoLatinBlack', 'LatoLatin', 'Source Sans Pro', Helvetica, sans-serif;" -->
+
+						May 13, 2015 <!-- .element: style="margin-top: 60px;" -->
+
+						[Wayne Eaker](http://wayneeaker.com) / [@wayneeaker](http://twitter.com/wayneeaker)<br />
+						[https://events.drupal.org/node/1109](https://events.drupal.org/node/1109)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## I'm Wayne Eaker
+
+
+						<div style="margin-left: 0%; width: 63%; float: left; text-align: left;">
+							Independent Drupal consultant, developer, site builder, themer<br /><br />
+
+							Maintainer of several modules: [Node Gallery](https://www.drupal.org/project/node_gallery),
+							[Menu Badges](https://www.drupal.org/project/menu_badges), [Wrappers Delight](https://www.drupal.org/project/wrappers_delight),
+							and more.<br /><br />
+
+							Teach online Drupal training classes at [DrupalTutor.com](http://drupaltutor.com)<br /><br />
+						</div>
+						<div style="margin-left: 7%;width: 30%;float: left; font-size: 75%; text-align: left;">
+							<img style="width: 100%; height: auto;" src="img/wayne-hires-drupal.png" /><br />
+							Drupal.org: [zengenuity](https://drupal.org/users/zengenuity)<br />
+							IRC: zengenuity<br />
+							Twitter: <a href="http://twitter.com/wayneeaker">@wayneeaker</a></p>
+						</div>
+					</script>
+				</section>
+
+				<!--  Talk Intro -->
+				<section data-markdown>
+					<script type="text/template">
+						## I'm Crazy About <!-- .element: style="margin-bottom: 0;" -->
+						## Organic Groups
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Overview
+
+						* The Typical Use Case
+						* Node-Based Use Cases
+						* How OG Works Under the Hood
+						* Going Beyond Nodes
+						* Other Crazy Ideas
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Typical Use Case
+
+						Groups of users sharing node content.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Features
+
+						* Groups can be created by admins or by users
+						* Groups can have their own roles. (admins, editors, etc.)
+						* Permissions assigned at the group-level to those roles.
+						* Admins assign group-level roles to group members.
+						* Membership can be open or moderated.
+						* Posting content to the group can be controlled by permission.
+						* Viewing content posted to a group can be limited to only members of the group.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Installation <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-install.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Joining Groups and Posting <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-join-post.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Viewing Group Content <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-views.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Typical Use Case
+
+						* Replacement for a forum
+						* Replacement for a mailing list (see Message / Message Notify / Message Digest modules)
+						* Intranet
+						* Social Network (see Drupal Commons)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Other Node-Based Use Cases
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+						 ## Learning Management <!-- .element: style="margin-bottom: 0;" -->
+						 ## Systems
+
+						 Group ---> Class
+
+						 Group Admin/Manager ---> Teacher
+
+						 Group Content: Assignments, resources, discussions
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Learning Management <!-- .element: style="margin-bottom: 0;" -->
+						## Systems
+
+						<img src="img/og-create-permissions.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<p><img src="img/og-lms-1.png" /></p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Private Classes / Groups <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-private.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<!-- Drupal Commerce Integration -->
+				<section data-markdown>
+					<script type="text/template">
+						## Selling Organic Groups
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Modules Needed
+
+						* [Drupal Commerce](https://www.drupal.org/project/commerce)
+						* [Commerce License](https://www.drupal.org/project/commerce_license)
+						* [Commerce License OG](https://www.drupal.org/project/commerce_license_og)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Selling Organic Groups <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-commerce.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Anonymous Checkouts <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<img src="img/og-license-anon-rule.png" /><br />
+						[Anon Checkout Rule Import](https://www.dropbox.com/s/00kxpmnlevj89a7/commerce-license-og-anon-rule.txt?dl=1)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Selling Organic Groups <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<img src="img/drupaltutor.png" />
+					</script>
+				</section>
+
+				<!-- Selling premium content -->
+				<section data-markdown>
+					<script type="text/template">
+						## Selling Premium Content
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Typical Approach
+
+						* Create role for "subscriber"
+						* Use [Content Access](https://www.drupal.org/project/content_access) module (or similar) to restrict viewing of premium content to subscriber role
+						* Sell access to role, either manually or with [Commerce License Role](https://www.drupal.org/project/commerce_license)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Typical Approach
+
+						* Problems scaling up to multiple content libraries: could end up with lots of roles.
+						* Permissions and other UI a mess when you have a lot of roles.
+						* No easy way to control authorship permission by content libary
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Alternative: Moar OG!
+
+						* Set up each content library as a group
+						* Create editor/admins for each group
+						* Post your premium content to the groups
+						* Sell access to the group as before
+						* Email notifications: Message stack: [Message](https://www.drupal.org/project/message) / [Message Notify](https://www.drupal.org/project/message_notify) / [Message Digest](https://www.drupal.org/project/message_digest)
+					</script>
+				</section>
+
+				<!-- Editoral sections -->
+				<section data-markdown>
+					<script type="text/template">
+						## Editorial Sections On Your Website
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Editorial Sections On Your Website
+
+						OG can be used to grant create and edit priviledges to parts of your site
+
+						* Each section is a group.
+						* Add editors to group, give them a role that can create/edit pages, etc.
+						* Use [OG Menu](https://www.drupal.org/project/og_menu) module to allow editors to maintain a section-level menu.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Setup <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-sections-setup.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## OG Menu Module <!-- .element: style="margin-bottom: 0.5em;" -->
+
+						<video controls>
+							<source src="video/og-menu.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## OG Architecture
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-1.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-3.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-2.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-4.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-5.png" />
+					</script>
+				</section>
+
+
+				<!-- Non-node entity type: user follow -->
+				<section data-markdown>
+					<script type="text/template">
+						## Using Other Entity Types
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## The Situation
+
+						* You are building social network or intranet site
+						* You're already using Organic Groups for group discussions
+						* You've been ask to implement a user "follow" feature
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## User Follow: The Common<br />Approach
+
+						* Use [User Relationships](https://www.drupal.org/project/user_relationships) module
+						* User Relationships already has UI for users to follow others
+						* You can use Views to show posts from users with whom you have a relationship
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## User Relationships: Why Not?
+
+						* It's a completely different system: DB tables, configuration, etc.
+						* Another set of modules to keep up to date
+						* What if you want to show posts from both groups and followed users in a single stream? (like Facebook)
+
+						There's nothing wrong with User Relationships module, but you already have a system for  <!-- .element: style="text-align: left;" -->
+						users subscribing to content on your site: Organic Groups
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-3.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/og-architecture-6.png" />
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Start with Normal Groups <!-- .element: style="margin-bottom: 0.5em;" -->
+						<video controls>
+							<source src="video/og-user-as-group-1.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Add The Crazy <!-- .element: style="margin-bottom: 0.5em;" -->
+						<video controls>
+							<source src="video/og-user-as-group-2.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Entityforms
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Entityform Module
+
+						* Similar to [Webform](https://www.drupal.org/project/entityform)
+						* Uses standard field system
+						* Submissions are Drupal entities
+						* Learn More: [http://wayneeaker.com/a2entityform](http://wayneeaker.com/a2entityform)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## OG Entityform Module
+
+						* Allows entityforms to be submitted in group context
+						* Group admins can view their group's submissions and receive email notifications
+						* Example: Contact form for each group's page.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Modules Needed
+
+						* [Entityform](https://www.drupal.org/project/entityform)
+						* [OG Entityform](https://www.drupal.org/project/og_entityform)
+						* [Entityreference Prepopulate](https://www.drupal.org/project/entityreference_prepopulate)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Standard Setup <!-- .element: style="margin-bottom: 0.5em;" -->
+						<video controls>
+							<source src="video/og-entityform-1.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+				<script type="text/template">
+					## Verified Product Reviews
+				</script>
+			</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Verified Product Reviews
+
+						* Product display pages as the groups
+						* Use OG Entityform module to accept reviews
+						* Verified Purchasers: Add users to the product page group when they checkout.
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Review Setup <!-- .element: style="margin-bottom: 0.5em;" -->
+						<video controls>
+							<source src="video/og-entityform-2.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Add Verified Purchasers <!-- .element: style="margin-bottom: 0.5em;" -->
+						<video controls>
+							<source src="video/og-entityform-3.mp4" type="video/mp4" />
+						</video>
+					</script>
+				</section>
+
+				<section>
+					<h2 style="text-transform: none;">template.php</h2>
+					<img style="width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/entityform-review-preprocess.png" />
+					<a href="https://www.dropbox.com/s/evclp45wmcslv89/entityform-review-preprocess.txt?dl=1">Download</a>
+				</section>
+
+				<section>
+					<h2 style="text-transform: none;">entityform--review.tpl.php</h2>
+					<img style="margin-top: -20px; width: 100%; height: auto; border: none; background: transparent; box-shadow: none;" src="img/entityform-review-template.png" />
+					<a href="https://www.dropbox.com/s/nm0mqns9xqig89x/entityform-review-template.txt?dl=1">Download</a>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Verified Product Reviews
+
+						[Features Export](https://www.dropbox.com/s/lextvafpupqctjh/entityform_og_verified_purchases-7.x-1.0.tar.gz?dl=1)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Other Fever Dreams
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Product Update Notifications
+
+						* **Group:** Product Display node or Commerce Product
+						* **Group Content:** Updates (Node, Message, custom entity type)
+						* Use Rules to add purchasers to group
+						* Use Message stack to send notifications
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Marketplace Site
+
+						* **Group:** Store node
+						* **Group Content:** Commerce Products (or Product Display nodes)
+						* **Group Content:** Commerce Line Items &mdash; keep track of which purchases go with which store
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Collaborative Image Galleries
+
+						* **Group:** Gallery Node
+						* **Group Content:** Image File Entity
+						* **Bonus:** Use fields on OG Membership entity for per-gallery description
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Taxonomy Subscriptions
+
+						* **Group:** Taxonomy Term
+						* **Group Content:** Nodes
+						* Use Message stack to send notifications
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## OG: It's not just for groups!
+
+						* Useful for collecting related entities together
+						* Especially for user subscriptions / access control to collection
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## OG Without Nodes
+
+						* Views and Rules support built-in
+						* You'll probably have to write your own UI
+						* Relatively simple API for adding / removing items from groups
+						* Use og_group() and og_ungroup()
+						* NEVER create og_membership entities directly!
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						<img alt="DrupalCon Los Angeles 2015" src="/img/dc2015-banner.png" style="margin-top: -50px; width: 40%; height: auto; border: none; background: transparent; box-shadow: none;"/>
+						## The Secret Life of <!-- .element: style="margin-bottom: 0;font-family: 'LatoLatinBlack', 'LatoLatin', 'Source Sans Pro', Helvetica, sans-serif; font-size: 1.4em;" -->
+						# Organic Groups <!-- .element: style="margin-bottom: 70px;" -->
+
+
+						<p>Review this session<br />
+						[https://events.drupal.org/node/1109](https://events.drupal.org/node/1109)</p>
+
+						<p style="margin-top: 70px;">[Wayne Eaker](http://wayneeaker.com) / [@wayneeaker](http://twitter.com/wayneeaker)</p>
+					</script>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

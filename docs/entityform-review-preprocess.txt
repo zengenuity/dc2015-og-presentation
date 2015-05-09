@@ -1,0 +1,13 @@
+function YOURTHEME_preprocess_entity(&$variables) {
+  if ($variables['entity_type'] == 'entityform'
+                               && $variables['entityform']->type == 'review') {
+    $variables['verified'] = FALSE;
+    $wrapper = entity_metadata_wrapper('entityform', $variables['entityform']);
+    $groups = $wrapper->og_entityform_group_ref->value();
+    foreach ($groups as $group) {
+      if (og_is_member('node', $group->nid, 'user', $wrapper->uid->value())) {
+        $variables['verified'] = t('Entityform Verified Purchase');
+      }
+    }
+  }
+}

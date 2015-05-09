@@ -1,0 +1,24 @@
+{ "rules_commerce_licence_og_join" : {
+    "LABEL" : "Join Group on Activate",
+    "PLUGIN" : "reaction rule",
+    "WEIGHT" : "10",
+    "OWNER" : "rules",
+    "REQUIRES" : [ "rules", "og", "commerce_license" ],
+    "ON" : { "commerce_license_update" : [], "commerce_license_insert" : [] },
+    "IF" : [
+      { "data_is" : { "data" : [ "commerce-license:status" ], "value" : "2" } },
+      { "entity_has_field" : { "entity" : [ "commerce-license:product" ], "field" : "cl_og_node" } },
+      { "NOT data_is_empty" : { "data" : [ "commerce-license:owner" ] } }
+    ],
+    "DO" : [
+      { "LOOP" : {
+          "USING" : { "list" : [ "commerce-license:product:cl-og-node" ] },
+          "ITEM" : { "list_item" : "Current list item" },
+          "DO" : [
+            { "og_subcribe_user" : { "user" : [ "commerce-license:owner" ], "group" : [ "list-item" ] } }
+          ]
+        }
+      }
+    ]
+  }
+}
